@@ -1,0 +1,174 @@
+﻿$top_bgc:rgb(65, 105, 225);
+$top_color:#ffffff;
+$color1:rgb(204, 238, 255);
+$color2:rgb(255, 136, 136);
+$color3:rgb(204, 255, 153);
+$color4:rgb(221, 221, 221);
+$color5:rgb(0, 159, 204);
+
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+html, body{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  position:relative;
+  // border:solid 1px red;
+}
+body{
+  position:relative;
+  background-color:#F5DEB3;
+  box-sizing:border-box;
+  border-top:solid 30px #D2691E;
+  border-bottom:solid 30px 	#A0522D;
+  overflow:hidden;    
+}
+.screen{
+  width:100%;
+  height:100%;
+  left:100%;
+}
+.namecard{
+  position:fixed;
+  width:300px;
+  height:200px;
+  left:50%;
+  top:50%;
+  padding:0px 20px 30px 20px;
+  overflow:hidden;
+  background-color:#CD853F;
+  color:#fff;
+  border:solid 1px rgba(0,0,0,0.15);
+  box-shadow:20px 25px 15px -15px rgba(0,0,0,0.25);
+  border-radius:10px;
+  font-family:微軟正黑體;
+  transition:0.5s;
+  hr{
+    border-color:#fff;
+    margin-top:-15px;
+    margin-bottom:20px;
+  }
+  h2{
+    font-size:25px;
+  }
+  span{
+    font-size:18px;
+  }
+  h5{
+    font-size:16px;
+    font-weight:400;
+  }
+}
+.namecard:hover{
+  transform:translate(-50px,-50px);
+  box-shadow:-20px -25px 15px -15px rgba(0,0,0,0.5);
+}
+.allbub{
+  width:100%;
+  height:100%;
+  border-radius:0px;
+  z-index:-3;
+  position:absolute;
+  left:0;
+  top:0;
+  background-color:#333;
+  @keyframes falling{
+    0%,100%{
+      opacity:0;
+    }
+    70%{
+      opacity:1;
+    }
+    0%{
+      transform:translate(100%,0px);
+    }
+    100%{
+      transform:translate(0px,100%);
+    }
+  }
+  [class*='bub']{
+    background-color:#fff;
+    width:30px;
+    height:30px;
+    border-radius:15px;
+    animation:falling 2s infinite;
+  }
+  @for $i from 1 through 20{
+    .bub#{$i} {
+      $posX:random()*100%;
+      $posY:random()*-100%+90%;
+      position:absolute;
+      left:$posX;
+      top:$posY;
+      animation-delay:$i*-0.1s;
+      
+    }
+  }
+}
+@keyframes back{
+    0%{
+      background-color:$color1;
+    }
+    25%{
+      background-color:$color2;
+    }
+    50%{
+      background-color:$color3;
+    }
+    75%{
+      background-color:$color4;
+    }
+    100%{
+      background-color:$color5;
+    }
+}
+.allbub{
+  animation:back 8s infinite;
+}
+/* *{
+  padding:0px;
+  margin:0px;
+  box-sizing:border-box;
+  border:solid 1px blue;
+} */
+body{
+  position:absolute;
+}
+.heart{
+  position:fixed;
+  width:100px;
+  height:100px;
+  margin:35%;
+  transition:all 2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+}
+.heart:hover{
+  transform:rotate(1202deg);
+  margin:0px;
+}
+.h1{
+  height:50px;
+  width:50px;
+  position:absolute;
+  top:0px;
+  left:0px;
+  border-radius:50%;
+  background-color:pink;
+}
+.h2{
+  height:50px;
+  width:50px;
+  position:absolute;
+  top:0px;
+  left:40px;
+  border-radius:50px;
+  background-color:pink;
+}
+.h3{
+  height:49px;
+  width:49px;
+  position:absolute;
+  top:21px;
+  left:21px;
+  transform:rotate(45deg);
+  background-color:pink;
+}
